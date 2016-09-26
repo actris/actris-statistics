@@ -124,7 +124,8 @@ var sample_data = [
     {"visits":0.004, "country":"eulux", "name":"Luxembourg"},
     {"visits":0.004, "country":"octkl", "name":"Tokelau"},
     {"visits":0.003, "country":"asphl", "name":"Phillippines"},
-    {"visits":0.358, "country":"euukr", "name":"Ukraine"}
+    {"visits":0.358, "country":"euukr", "name":"Ukraine"},
+    {"visits":4.635, "country":false, "name":false}
 ]
 
   var visualization = d3plus.viz()
@@ -168,6 +169,107 @@ var sample_data = [
 <br>
     
 <hr>
+    
+<!-- NEW MAP -->
+    
+<div id="earlinet-db">
+
+</div>
+    
+<script>
+
+var sample_data = [
+    {"visits":4.034, "country":"eunor", "name":"Norway"},
+    {"visits":0.261, "country":"nausa", "name":"United States"},
+    {"visits":58.796, "country":"eugbr", "name":"United Kingdom"},
+    {"visits":2.909, "country":"euche", "name":"Switzerland"},
+    {"visits":3.053, "country":"eudeu", "name":"Germany"},
+    {"visits":3.074, "country":"eufra", "name":"France"},
+    {"visits":1.813, "country":"eunld", "name":"Netherlands"},
+    {"visits":2.289, "country":"eugrc", "name":"Greece"},
+    {"visits":2.071, "country":"eufin", "name":"Finland"},
+    {"visits":1.390, "country":"euswe", "name":"Sweden"},
+    {"visits":0.251, "country":"aschn", "name":"China"}, 
+    {"visits":1.125, "country":"euita", "name":"Italy"},
+    {"visits":2.376, "country":"euesp", "name":"Spain"},
+    {"visits":0.147, "country":"asjpn", "name":"Japan"},
+    {"visits":0.516, "country":"eucze", "name":"Czech Republic"},
+    {"visits":0.122, "country":"euirl", "name":"Ireland"},
+    {"visits":1.455, "country":"euaut", "name":"Austria"},
+    {"visits":0.181, "country":"eudnk", "name":"Denmark"},
+    {"visits":2.188, "country":"eupol", "name":"Poland"},
+    {"visits":0.048, "country":"euhun", "name":"Hungary"},
+    {"visits":0.373, "country":"asrus", "name":"Russia"},
+    {"visits":0.071, "country":"ocaus", "name":"Australia"},
+    {"visits":0.467, "country":"eubel", "name":"Belgium"},
+    {"visits":1.105, "country":"eultu", "name":"Lithuania"},
+    {"visits":0.306, "country":"euisl", "name":"Iceland"},
+    {"visits":0.963, "country":"ascyp", "name":"Cyprus"},
+    {"visits":0.028, "country":"askor", "name":"South Korea"},
+    {"visits":0.031, "country":"asind", "name":"India"},
+    {"visits":0.040, "country":"eusrb", "name":"Serbia"},
+    {"visits":0.020, "country":"eusvn", "name":"Slovenia"},
+    {"visits":0.234, "country":"euest", "name":"Estonia"},
+    {"visits":0.393, "country":"eubgr", "name":"Bulgaria"},
+    {"visits":0.025, "country":"ocidn", "name":"Indonesia"},
+    {"visits":1.956, "country":"eurou", "name":"Romania"},
+    {"visits":0.009, "country":"asomn", "name":"Oman"},
+    {"visits":0.020, "country":"eumda", "name":"Moldova"},
+    {"visits":0.044, "country":"samex", "name":"Mexico"},
+    {"visits":0.055, "country":"euprt", "name":"Portugal"},
+    {"visits":0.082, "country":"askaz", "name":"Kazakhstan"},
+    {"visits":0.108, "country":"aspak", "name":"Pakistan"},
+    {"visits":0.131, "country":"asisr", "name":"Israel"},
+    {"visits":0.198, "country":"astur", "name":"Turkey"},
+    {"visits":0.214, "country":"sabra", "name":"Brazil"},
+    {"visits":0.037, "country":"saarg", "name":"Argentina"},
+    {"visits":0.019, "country":"sachl", "name":"Chile"},
+    {"visits":0.011, "country":"eusvk", "name":"Slovakia"},
+    {"visits":0.005, "country":"saecu", "name":"Ecuador"},
+    {"visits":0.004, "country":"eulux", "name":"Luxembourg"},
+    {"visits":0.004, "country":"octkl", "name":"Tokelau"},
+    {"visits":0.003, "country":"asphl", "name":"Phillippines"},
+    {"visits":0.358, "country":"euukr", "name":"Ukraine"}
+]
+
+  var visualization = d3plus.viz()
+    .container("#earlinet-db
+               ")       
+    .data(sample_data)        
+    .coords("countries.json")
+    .type("geo_map")          
+    .id("country")            
+    .text("name")
+    .background("#ffffff") 
+    .legend({
+        "value": true,
+        "size":2
+    })
+    .color({
+        "heatmap":["#3690c0","#a50f15"],
+        "value":"visits",
+    })
+    .tooltip("visits")
+    .format({
+    "number": function(number) {
+        return number + " %"
+    }
+    })
+    .title({
+       "sub": "Global distribution of visits to the ACTRIS portal (51 countries in total)",
+      //"total": true,
+      "width": 1200
+       
+    })
+    .font({"size": 20})   
+    .draw()                   
+  
+</script>
+<img src="actris-logo.png" alt="actris logo">
+
+<img src=gaw-logo.jpg alt="gaw logo" >
+
+    <p style="font-size:1em;" class="info"><i></i></p>    
     
 </body>
 
