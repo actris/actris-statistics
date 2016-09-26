@@ -67,7 +67,7 @@
 
 <body>
     
-<div id="gaw-actris">
+<div id="actris-user-distribution">
 
 </div>
     
@@ -128,7 +128,7 @@ var sample_data = [
 ]
 
   var visualization = d3plus.viz()
-    .container("#gaw-actris")       
+    .container("#actris-user-distribution")       
     .data(sample_data)        
     .coords("countries.json")
     .type("geo_map")          
@@ -137,9 +137,10 @@ var sample_data = [
     .background("#ffffff") 
     .legend({
         "value": true,
+        "size":2
     })
     .color({
-        /*"heatmap":["#3690c0","#a50f15"],*/ 
+        "heatmap":["#3690c0","#a50f15"],
         "value":"visits",
     })
     .tooltip("visits")
@@ -162,7 +163,7 @@ var sample_data = [
 
 <img src=gaw-logo.jpg alt="gaw logo" >
 
-    <p style="font-size:1em;" class="info"><i>Usage data from ACTRIS,ACTRIS_preliminary,ACTRIS_NRT,EMEP,EUSAAR,EUSAAR_NRT,CREATE,GAW-WDCA,GAW-WDCA_NRT</i></p>
+    <p style="font-size:1em;" class="info"><i></i></p>
 
 <br>
     
