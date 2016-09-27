@@ -125,7 +125,7 @@ var sample_data = [
     {"visits":0.004, "country":"octkl", "name":"Tokelau"},
     {"visits":0.003, "country":"asphl", "name":"Phillippines"},
     {"visits":0.358, "country":"euukr", "name":"Ukraine"}
-    //{"visits":4.635, "country":false, "name":false}
+    
 ]
 
   var visualization = d3plus.viz()
@@ -147,7 +147,8 @@ var sample_data = [
     .tooltip("visits")
     .format({
     "number": function(number) {
-        return number + " %";
+        
+        return parseFloat(number).toFixed(3) + " %";
     }
     })
     .title({
@@ -156,13 +157,11 @@ var sample_data = [
       "width": 1200
        
     })
-    .font({"size": 20})   
+    .font({"size": 30})   
     .draw()                   
   
 </script>
 <img src="actris-logo.png" alt="actris logo">
-
-<img src=gaw-logo.jpg alt="gaw logo" >
 
     <p style="font-size:1em;" class="info"><i></i></p>
 
@@ -170,9 +169,9 @@ var sample_data = [
     
 <hr>
     
-<!-- NEW MAP -->
+<!-- Geographical distribution of users over May 2015 - Aug 2016 -->
     
-<div id="earlinet-db">
+<div id="ebas-db">
 
 </div>
     
@@ -225,7 +224,7 @@ var sample_data = [
 ]
 
   var visualization = d3plus.viz()
-    .container("#earlinet-db")       
+    .container("#ebas-db")       
     .data(sample_data)        
     .coords("countries.json")
     .type("geo_map")          
@@ -242,21 +241,19 @@ var sample_data = [
     })
     .tooltip("# of unique IPs")
     .title({
-       "sub": "Global distribution of ACTRIS profile data 2015- September 2016.",
+       "sub": "Global distribution of users of ACTRIS near surface data (42 countries in total)",
       "total": true,
       "width": 1200
        
     })
-    .font({"size": 20})   
+    .font({"size": 30})   
     .draw()                   
   
 </script>
 <img src="actris-logo.png" alt="actris logo">
 
-<img src=gaw-logo.jpg alt="gaw logo" >
+    <p style="font-size:1em;" class="info"><i></i></p>    
 
-    <p style="font-size:1em;" class="info"><i>Number of unique client IPs by user country (Earlinet DB)</i></p>    
-    
 <!-- NEW MAP -->
 
     <br>
@@ -317,20 +314,18 @@ var sample_data = [
     })
     .tooltip("# of unique IPs")
     .title({
-       "sub": "Global distribution of users of ACTRIS near surface data. (42 countries in total)",
+       "sub": "Global distribution of ACTRIS profile data 2015- September 2016. (24 countries in total)",
       "total": true,
       "width": 1200
        
     })
-    .font({"size": 20})   
+    .font({"size": 30})   
     .draw()                   
   
 </script>
 <img src="actris-logo.png" alt="actris logo">
 
-<img src=gaw-logo.jpg alt="gaw logo" >
-
-    <p style="font-size:1em;" class="info"><i>ACTRIS,ACTRIS_preliminary,ACTRIS_NRT,EMEP,EUSAAR,EUSAAR_NRT,CREATE<br>2015-05-01 - 2016-09-01</i></p>    
+    <p style="font-size:1em;" class="info"><i></i></p>    
     
     
 </body>
