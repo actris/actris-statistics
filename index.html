@@ -66,6 +66,102 @@
 </head>
 
 <body>
+
+<!-- total-actris-near-surface-and-profile-users map -->
+    
+<div id="total-actris-near-surface-and-profile-users">
+
+</div>
+    
+<script>
+
+var sample_data = [
+    {"#Unique client IPs by user country":75, "country":"eunor", "name":"Norway"},
+    {"#Unique client IPs by user country":64, "country":"nausa", "name":"United States"},
+    {"#Unique client IPs by user country":45, "country":"eugbr", "name":"United Kingdom"},
+    {"#Unique client IPs by user country":49, "country":"euche", "name":"Switzerland"},
+    {"#Unique client IPs by user country":51, "country":"eudeu", "name":"Germany"},
+    {"#Unique client IPs by user country":31, "country":"eufra", "name":"France"},
+    {"#Unique client IPs by user country":22, "country":"eunld", "name":"Netherlands"},
+    {"#Unique client IPs by user country":27, "country":"eugrc", "name":"Greece"},
+    {"#Unique client IPs by user country":32, "country":"eufin", "name":"Finland"},
+    {"#Unique client IPs by user country":21, "country":"euswe", "name":"Sweden"},
+    {"#Unique client IPs by user country":23, "country":"aschn", "name":"China"}, 
+    {"#Unique client IPs by user country":50, "country":"euita", "name":"Italy"},
+    {"#Unique client IPs by user country":21, "country":"euesp", "name":"Spain"},
+    {"#Unique client IPs by user country":15, "country":"asjpn", "name":"Japan"},
+    {"#Unique client IPs by user country":10, "country":"nacan", "name":"Canada"},
+    {"#Unique client IPs by user country":7, "country":"eucze", "name":"Czech Republic"},
+    {"#Unique client IPs by user country":5, "country":"euirl", "name":"Ireland"},
+    {"#Unique client IPs by user country":1, "country":"euaut", "name":"Austria"},
+    {"#Unique client IPs by user country":7, "country":"eudnk", "name":"Denmark"},
+    {"#Unique client IPs by user country":14, "country":"eupol", "name":"Poland"},
+    {"#Unique client IPs by user country":2, "country":"euhun", "name":"Hungary"},
+    {"#Unique client IPs by user country":2, "country":"asrus", "name":"Russia"},
+    {"#Unique client IPs by user country":4, "country":"ocaus", "name":"Australia"},
+    {"#Unique client IPs by user country":1, "country":"eubel", "name":"Belgium"},
+    {"#Unique client IPs by user country":2, "country":"eultu", "name":"Lithuania"},
+    {"#Unique client IPs by user country":2, "country":"euisl", "name":"Iceland"},
+    {"#Unique client IPs by user country":4, "country":"ascyp", "name":"Cyprus"},
+    {"#Unique client IPs by user country":7, "country":"askor", "name":"South Korea"},
+    {"#Unique client IPs by user country":2, "country":"asind", "name":"India"},
+    {"#Unique client IPs by user country":4, "country":"eusrb", "name":"Serbia"},
+    {"#Unique client IPs by user country":4, "country":"eusvn", "name":"Slovenia"},
+    {"#Unique client IPs by user country":2, "country":"sabol", "name":"Bolivia"},
+    {"#Unique client IPs by user country":1, "country":"eumlt", "name":"Malta"},
+    {"#Unique client IPs by user country":1, "country":"euhrv", "name":"Croatia"},
+    {"#Unique client IPs by user country":1, "country":"eubgr", "name":"Bulgaria"},
+    {"#Unique client IPs by user country":3, "country":"eurou", "name":"Romania"},
+    {"#Unique client IPs by user country":4, "country":"euprt", "name":"Portugal"},
+    {"#Unique client IPs by user country":1, "country":"aspak", "name":"Pakistan"},
+    {"#Unique client IPs by user country":1, "country":"eulva", "name":"Latvia"},
+    {"#Unique client IPs by user country":1, "country":"afegy", "name":"Egypt"},
+    {"#Unique client IPs by user country":1, "country":"asare", "name":"United Arab Emirates"},
+    {"#Unique client IPs by user country":1, "country":"euest", "name":"Estonia"},
+    {"#Unique client IPs by user country":2, "country":"asvnm", "name":"Vietnam"},
+    {"#Unique client IPs by user country":1, "country":"asirn", "name":"Iran"},
+    {"#Unique client IPs by user country":1, "country":"eublr", "name":"Belarus"},
+    {"#Unique client IPs by user country":1, "country":"ashkg", "name":"Hong Kong"}
+    
+]
+
+  var visualization = d3plus.viz()
+    .container("#total-actris-near-surface-and-profile-users")       
+    .data(sample_data)        
+    .coords("countries.json")
+    .type("geo_map")          
+    .id("country")            
+    .text("name")
+    .background("#ffffff") 
+    .legend({
+        "value": true,
+        "size":2
+    })
+    .color({
+        "heatmap":["#3690c0","#a50f15"],
+        "value":"#Unique client IPs by user country",
+    })
+    .tooltip("#Unique client IPs by user country")
+    .title({
+    "sub": "Total ACTRIS: Near surface + profile users (46 countries)",
+      "total": true,
+      "width": 1200
+       
+    })
+    .font({"size": 30})   
+    .draw()                   
+  
+</script>
+<img src="actris-logo.png" alt="actris logo">
+
+    <p style="font-size:1em;" class="info"><i></i></p>
+
+<br>
+    
+<hr>
+    
+<!-- New map -->
+    
     
 <div id="actris-user-distribution">
 
