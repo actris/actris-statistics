@@ -66,6 +66,91 @@
 </head>
 
 <body>
+    
+<div id="total">
+
+</div>
+    
+<script>
+
+var sample_data = [
+    
+    {"years":3152.72, "country":"eunor", "name":"Norway"},
+    {"years":911.63, "country":"nausa", "name":"United States"},
+    {"years":3147.71, "country":"eugbr", "name":"United Kingdom"},
+    {"years":1409.06, "country":"euche", "name":"Switzerland"},
+    {"years":1197.63, "country":"eudeu", "name":"Germany"},
+    {"years":395.11, "country":"eufra", "name":"France"},
+    {"years":200.06, "country":"eunld", "name":"Netherlands"},
+    {"years":321.08, "country":"eugrc", "name":"Greece"},
+    {"years":717.17, "country":"eufin", "name":"Finland"},
+    {"years":498.21, "country":"euswe", "name":"Sweden"},
+    {"years":2267.00, "country":"aschn", "name":"China"}, 
+    {"years":989.02, "country":"euita", "name":"Italy"},
+    {"years":109.22, "country":"euesp", "name":"Spain"},
+    {"years":1442.65, "country":"asjpn", "name":"Japan"},
+    {"years":235.10, "country":"nacan", "name":"Canada"},
+    {"years":39.59, "country":"eucze", "name":"Czech Republic"},
+    {"years":1.11, "country":"euirl", "name":"Ireland"},
+    {"years":1.22, "country":"euaut", "name":"Austria"},
+    {"years":27.66, "country":"eudnk", "name":"Denmark"},
+    {"years":55.02, "country":"eupol", "name":"Poland"},
+    {"years":1.00, "country":"euhun", "name":"Hungary"},
+    {"years":131.96, "country":"ocaus", "name":"Australia"},
+    {"years":0.01, "country":"eubel", "name":"Belgium"},
+    {"years":1.88, "country":"eultu", "name":"Lithuania"},
+    {"years":3.01, "country":"euisl", "name":"Iceland"},
+    {"years":3.64, "country":"ascyp", "name":"Cyprus"},
+    {"years":101.24, "country":"askor", "name":"South Korea"},
+    {"years":6.33, "country":"asind", "name":"India"},
+    {"years":10.12, "country":"eusrb", "name":"Serbia"},
+    {"years":3.09, "country":"sabol", "name":"Bolivia"},
+    {"years":2.00, "country":"euhrv", "name":"Croatia"},
+    {"years":344.29, "country":"eurou", "name":"Romania"},
+    {"years":38.36, "country":"euprt", "name":"Portugal"},
+    {"years":0.10, "country":"asare", "name":"United Arab Emirates"},
+    {"years":1430.64, "country":"asvnm", "name":"Vietnam"},
+    {"years":0.01, "country":"asirn", "name":"Iran"},
+    {"years":0.01, "country":"eublr", "name":"Belarus"},
+    {"years":2.97, "country":"ashkg", "name":"Hong Kong"},
+    {"years":17.99, "country":"eusvn", "name":"Slovenia"}  
+    
+]
+
+  var visualization = d3plus.viz()
+    .container("#total")       
+    .data(sample_data)        
+    .coords("../countries.json")
+    .type("geo_map")          
+    .id("country")            
+    .text("name")
+    .background("#ffffff") 
+    .legend({
+        "value": true,
+        "size":2
+    })
+    .color({
+        "heatmap":["#3690c0","#a50f15"],
+        "value":"years",
+    })
+    .tooltip("years")
+    .title({
+    "sub": "Total: Years of downloaded data (May 2015 - Aug 2016)",
+      "total": true,
+      "width": 1200
+       
+    })
+    .font({"size": 30})   
+    .draw()                   
+  
+</script>
+<img src="../actris-logo.png" alt="actris logo">
+
+    <p style="font-size:1em;" class="info"><i></i></p>
+
+<br>
+    
+<hr>
 
 <!-- total-actris-near-surface-and-profile-users map -->
     
@@ -221,90 +306,7 @@ var sample_data = [
     
 <!-- new map -->
     
-<div id="total">
 
-</div>
-    
-<script>
-
-var sample_data = [
-    
-    {"years":3152.72, "country":"eunor", "name":"Norway"},
-    {"years":911.63, "country":"nausa", "name":"United States"},
-    {"years":3147.71, "country":"eugbr", "name":"United Kingdom"},
-    {"years":1409.06, "country":"euche", "name":"Switzerland"},
-    {"years":1197.63, "country":"eudeu", "name":"Germany"},
-    {"years":395.11, "country":"eufra", "name":"France"},
-    {"years":200.06, "country":"eunld", "name":"Netherlands"},
-    {"years":321.08, "country":"eugrc", "name":"Greece"},
-    {"years":717.17, "country":"eufin", "name":"Finland"},
-    {"years":498.21, "country":"euswe", "name":"Sweden"},
-    {"years":2267.00, "country":"aschn", "name":"China"}, 
-    {"years":989.02, "country":"euita", "name":"Italy"},
-    {"years":109.22, "country":"euesp", "name":"Spain"},
-    {"years":1442.65, "country":"asjpn", "name":"Japan"},
-    {"years":235.10, "country":"nacan", "name":"Canada"},
-    {"years":39.59, "country":"eucze", "name":"Czech Republic"},
-    {"years":1.11, "country":"euirl", "name":"Ireland"},
-    {"years":1.22, "country":"euaut", "name":"Austria"},
-    {"years":27.66, "country":"eudnk", "name":"Denmark"},
-    {"years":55.02, "country":"eupol", "name":"Poland"},
-    {"years":1.00, "country":"euhun", "name":"Hungary"},
-    {"years":131.96, "country":"ocaus", "name":"Australia"},
-    {"years":0.01, "country":"eubel", "name":"Belgium"},
-    {"years":1.88, "country":"eultu", "name":"Lithuania"},
-    {"years":3.01, "country":"euisl", "name":"Iceland"},
-    {"years":3.64, "country":"ascyp", "name":"Cyprus"},
-    {"years":101.24, "country":"askor", "name":"South Korea"},
-    {"years":6.33, "country":"asind", "name":"India"},
-    {"years":10.12, "country":"eusrb", "name":"Serbia"},
-    {"years":3.09, "country":"sabol", "name":"Bolivia"},
-    {"years":2.00, "country":"euhrv", "name":"Croatia"},
-    {"years":344.29, "country":"eurou", "name":"Romania"},
-    {"years":38.36, "country":"euprt", "name":"Portugal"},
-    {"years":0.10, "country":"asare", "name":"United Arab Emirates"},
-    {"years":1430.64, "country":"asvnm", "name":"Vietnam"},
-    {"years":0.01, "country":"asirn", "name":"Iran"},
-    {"years":0.01, "country":"eublr", "name":"Belarus"},
-    {"years":2.97, "country":"ashkg", "name":"Hong Kong"},
-    {"years":17.99, "country":"eusvn", "name":"Slovenia"}  
-    
-]
-
-  var visualization = d3plus.viz()
-    .container("#total")       
-    .data(sample_data)        
-    .coords("../countries.json")
-    .type("geo_map")          
-    .id("country")            
-    .text("name")
-    .background("#ffffff") 
-    .legend({
-        "value": true,
-        "size":2
-    })
-    .color({
-        "heatmap":["#3690c0","#a50f15"],
-        "value":"years",
-    })
-    .tooltip("years")
-    .title({
-    "sub": "Total: Years of downloaded data (May 2015 - Aug 2016)",
-      "total": true,
-      "width": 1200
-       
-    })
-    .font({"size": 30})   
-    .draw()                   
-  
-</script>
-<img src="../actris-logo.png" alt="actris logo">
-
-    <p style="font-size:1em;" class="info"><i></i></p>
-
-<br>
-    
-<hr>
 
 </body>
 
